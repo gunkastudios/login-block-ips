@@ -143,7 +143,7 @@ class Login_Block_IPs_Public {
 
 			        if(!in_array($currentIp, $allowedIps)){
 				        header("HTTP/1.1 401 Unauthorized");
-						wp_die( 'Acceso denegado' );
+						wp_die( 'Access denied' );
 			        }
 
 			    }
