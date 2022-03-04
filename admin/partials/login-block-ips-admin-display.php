@@ -157,7 +157,7 @@ if($security_code == ""){
                             <tr><td>#</td><td><?php echo __( 'IP', 'login-block-ips' ); ?></td><td><?php echo __( 'Description', 'login-block-ips' ); ?></td></tr>
                             <?php
                             for($i = 1; $i < 15; $i++){
-                                echo '<tr><td>#'.$i.'</td><td><input size="15" type="text" name="ip'.$i.'" value="' . (get_option('login-block-ips-ip'.$i) != "" ? esc_attr(get_option('login-block-ips-ip'.$i)) : "") . '" /></td><td><input size="50" type="text" name="ipdesc'.$i.'" value="' . (get_option('login-block-ips-desc'.$i) != "" ? esc_attr(get_option('login-block-ips-desc'.$i)) : "") . '" /></td></tr>';
+                                echo '<tr><td>#'.esc_attr($i).'</td><td><input size="15" type="text" name="ip'.$i.'" value="' . esc_attr((get_option('login-block-ips-ip'.$i)) != "" ? esc_attr(get_option('login-block-ips-ip'.$i)) : "") . '" /></td><td><input size="50" type="text" name="ipdesc'.$i.'" value="' . esc_attr((get_option('login-block-ips-desc'.$i)) != "" ? esc_attr(get_option('login-block-ips-desc'.$i)) : "") . '" /></td></tr>';
                             }
                             ?>
                         </table>
